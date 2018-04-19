@@ -110,18 +110,17 @@ public class FamilyMemberFragment extends Fragment{
         String occupation = occupationEditText.getText().toString();
 
         boolean isGuardian = guardian.isSelected();
-        boolean isSibling = sibling.isSelected();
 
         int age;
         try {
             age = Integer.valueOf(ageEditText.getText().toString());
         } catch (NumberFormatException e) {
-            Toast.makeText(getContext(), "Please enter your age", Toast.LENGTH_LONG).show();
+            Toast.makeText(getContext(), "Please enter your family member age", Toast.LENGTH_LONG).show();
             return;
         }
 
         if (firstName.isEmpty() || lastName.isEmpty()) {
-            Toast.makeText(getContext(), "Please enter your name", Toast.LENGTH_LONG).show();
+            Toast.makeText(getContext(), "Please enter your family member name", Toast.LENGTH_LONG).show();
             return;
         }
 
@@ -143,7 +142,7 @@ public class FamilyMemberFragment extends Fragment{
             CollegeAppDatabase.addSibling(familyMember);
 
         System.out.println(familyMember);
-        //clearElements();
+        clearElements();
     }
 
     private void clearElements() {

@@ -10,6 +10,11 @@
             android:id="@+id/family_member"
             android:icon="@drawable/ic_group_black_24dp"
             android:title="@string/family_member" />
+
+        <item
+            android:id="@+id/references"
+            android:icon="@drawable/ic_assignment_ind_black_24dp"
+            android:title="@string/references" />
     </group>
 
 

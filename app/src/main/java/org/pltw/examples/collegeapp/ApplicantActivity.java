@@ -21,8 +21,6 @@ import java.util.ArrayList;
 public class ApplicantActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
-    ArrayList<BasicInfo> guardians = new ArrayList<>();
-    BasicInfo sibling;
     StudentInfo student;
 
     @Override
@@ -101,6 +99,9 @@ public class ApplicantActivity extends AppCompatActivity
         }
         else if (id == R.id.profile) {
             contentFragment = new ProfileFragment();
+        }
+        else if (id == R.id.references) {
+            contentFragment = new ReferencesFragment();
         }
 
         if (contentFragment != null) {
