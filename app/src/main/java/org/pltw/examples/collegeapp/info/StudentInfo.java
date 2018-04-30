@@ -1,20 +1,42 @@
 package org.pltw.examples.collegeapp.info;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.util.ArrayList;
 
 /**
  * Created by AL313011 on 4/16/2018.
  */
 public class StudentInfo extends BasicInfo {
-    private String previousSchoolName = "", startDate = "", endDate = "";
+    private String previousSchoolName = "", previousStartDate = "", previousEndDate = "";
     private String major = "", minor = "";
     private boolean isTransfer = false;
-    private ArrayList<String>schoolAchievements = new ArrayList<>();
-    private ArrayList<ReferenceInfo>references = new ArrayList<>();
-    private double gpaOverall = 0.0, financialAidAmo = 0.0;
+    private ArrayList<String> achievements = new ArrayList<>();
+    private double gpa = 0.0, financialAid = 0.0;
 
     public StudentInfo(String firstName, String lastName) {
         super(firstName, lastName);
+    }
+
+    public StudentInfo(JSONObject jsonObject) {
+        super(jsonObject);
+        try {
+            previousSchoolName = jsonObject.getString("previousschoolname");
+            previousStartDate = jsonObject.getString("previousstartdate");
+            previousEndDate = jsonObject.getString("previousenddate");
+            major = jsonObject.getString("major");
+            minor = jsonObject.getString("minor");
+            isTransfer = jsonObject.getBoolean("istransfer");
+            for (int i = 0; i < jsonObject.getJSONArray("achievements").length(); i++) {
+                achievements.add(jsonObject.getJSONArray("achievements").getString(i));
+            }
+            gpa = jsonObject.getDouble("gpa");
+            financialAid = jsonObject.getDouble("financialaid");
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
     }
 
     public String getPreviousSchoolName() {
@@ -25,20 +47,20 @@ public class StudentInfo extends BasicInfo {
         this.previousSchoolName = previousSchoolName;
     }
 
-    public String getStartDate() {
-        return startDate;
+    public String getPreviousStartDate() {
+        return previousStartDate;
     }
 
-    public void setStartDate(String startDate) {
-        this.startDate = startDate;
+    public void setPreviousStartDate(String previousStartDate) {
+        this.previousStartDate = previousStartDate;
     }
 
-    public String getEndDate() {
-        return endDate;
+    public String getPreviousEndDate() {
+        return previousEndDate;
     }
 
-    public void setEndDate(String endDate) {
-        this.endDate = endDate;
+    public void setPreviousEndDate(String previousEndDate) {
+        this.previousEndDate = previousEndDate;
     }
 
     public String getMajor() {
@@ -65,36 +87,49 @@ public class StudentInfo extends BasicInfo {
         isTransfer = transfer;
     }
 
-    public ArrayList<String> getSchoolAchievements() {
-        return schoolAchievements;
+    public ArrayList<String> getAchievements() {
+        return achievements;
     }
 
-    public void setSchoolAchievements(ArrayList<String> schoolAchievements) {
-        this.schoolAchievements = schoolAchievements;
+    public void setAchievements(ArrayList<String> achievements) {
+        this.achievements = achievements;
     }
 
-    public ArrayList<ReferenceInfo> getReferences() {
-        return references;
+    public double getGpa() {
+        return gpa;
     }
 
-    public void setReferences(ArrayList<ReferenceInfo> references) {
-        this.references = references;
+    public void setGpa(double gpa) {
+        this.gpa = gpa;
     }
 
-    public double getGpaOverall() {
-        return gpaOverall;
+    public double getFinancialAid() {
+        return financialAid;
     }
 
-    public void setGpaOverall(double gpaOverall) {
-        this.gpaOverall = gpaOverall;
+    public void setFinancialAid(double financialAid) {
+        this.financialAid = financialAid;
     }
 
-    public double getFinancialAidAmo() {
-        return financialAidAmo;
-    }
+    @Override
+    public JSONObject serializeJSON() {
+        JSONObject baseObject = super.serializeJSON();
 
-    public void setFinancialAidAmo(double financialAidAmo) {
-        this.financialAidAmo = financialAidAmo;
-    }
+        // Add student-specific information
+        try {
+            baseObject.put("previousschoolname", previousSchoolName);
+            baseObject.put("previousstartdate", previousStartDate);
+            baseObject.put("previousenddate", previousEndDate);
+            baseObject.put("major", major);
+            baseObject.put("minor", minor);
+            baseObject.put("istransfer", isTransfer);
+            baseObject.put("achievements", new JSONArray(achievements));
+            baseObject.put("gpa", gpa);
+            baseObject.put("financialAid", financialAid);
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
 
+        return baseObject;
+    }
 }
