@@ -1,17 +1,32 @@
 package org.pltw.examples.collegeapp.info;
 
-/**
- * Created by AL313011 on 4/16/2018.
- */
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.sql.Ref;
+
 public class ReferenceInfo extends BasicInfo {
     private String companyName = "";
     private String emailAddress = "";
-    private String relationshipWithApplicant = "";
+    private String relation = "";
     private String phoneNumber = "";
     private int volunteerHours = 0;
 
     public ReferenceInfo(String firstName, String lastName) {
         super(firstName, lastName);
+    }
+
+    public ReferenceInfo(JSONObject jsonObject) {
+        super(jsonObject);
+        try {
+            companyName = jsonObject.getString("companyname");
+            emailAddress = jsonObject.getString("emailaddress");
+            relation = jsonObject.getString("relation");
+            phoneNumber = jsonObject.getString("phonenumber");
+            volunteerHours = jsonObject.getInt("volunteerhours");
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
     }
 
     public String getCompanyName() {
@@ -30,12 +45,12 @@ public class ReferenceInfo extends BasicInfo {
         this.emailAddress = emailAddress;
     }
 
-    public String getRelationshipWithApplicant() {
-        return relationshipWithApplicant;
+    public String getRelation() {
+        return relation;
     }
 
-    public void setRelationshipWithApplicant(String relationshipWithApplicant) {
-        this.relationshipWithApplicant = relationshipWithApplicant;
+    public void setRelation(String relation) {
+        this.relation = relation;
     }
 
     public String getPhoneNumber() {
@@ -54,4 +69,21 @@ public class ReferenceInfo extends BasicInfo {
         this.volunteerHours = volunteerHours;
     }
 
+    @Override
+    public JSONObject serializeJSON() {
+        JSONObject baseObject = super.serializeJSON();
+
+        // Add reference-specific items
+        try {
+            baseObject.put("companyname", companyName);
+            baseObject.put("emailaddress", emailAddress);
+            baseObject.put("relation", relation);
+            baseObject.put("phonenumber", phoneNumber);
+            baseObject.put("volunteerhours", volunteerHours);
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+
+        return baseObject;
+    }
 }

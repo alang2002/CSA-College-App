@@ -8,9 +8,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
 
-/**
- * Created by AL313011 on 4/16/2018.
- */
 public class ProfileFragment extends Fragment {
     @Nullable
     @Override

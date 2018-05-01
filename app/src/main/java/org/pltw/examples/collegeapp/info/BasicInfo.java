@@ -1,8 +1,8 @@
 package org.pltw.examples.collegeapp.info;
 
-/**
- * Created by AL313011 on 4/16/2018.
- */
+import org.json.JSONException;
+import org.json.JSONObject;
+
 public class BasicInfo {
     private String firstName = "", lastName  = "";
     private String occupation = "";
@@ -12,6 +12,22 @@ public class BasicInfo {
     public BasicInfo(String firstName, String lastName) {
         this.firstName = firstName;
         this.lastName = lastName;
+    }
+
+    /**
+     * Instantiate this class from a json object
+     * @param jsonObject the object containing BasicInfo data
+     */
+    public BasicInfo(JSONObject jsonObject) {
+        try {
+            firstName = jsonObject.getString("firstname");
+            lastName = jsonObject.getString("lastname");
+            occupation = jsonObject.getString("occupation");
+            birthdate = jsonObject.getString("birthdate");
+            age = jsonObject.getInt("age");
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
     }
 
     public String getFirstName() {
@@ -58,4 +74,25 @@ public class BasicInfo {
     public String toString() {
         return firstName + " " + lastName + " - " + birthdate + ", " + age;
     }
+
+    /**
+     * Return this object in the form of JSON
+     * @return this object in JSON
+     */
+    public JSONObject serializeJSON() {
+        JSONObject object = new JSONObject();
+        try {
+            object.put("firstname", firstName);
+            object.put("lastname", lastName);
+            object.put("occupation", occupation);
+            object.put("birthdate", birthdate);
+            object.put("age", age);
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+
+        return object;
+    }
+
+
 }
