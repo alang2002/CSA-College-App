@@ -20,9 +20,6 @@ import org.pltw.examples.collegeapp.info.BasicInfo;
 import java.util.Arrays;
 import java.util.Locale;
 
-/**
- * Created by AL313011 on 4/13/2018.
- */
 public class FamilyMemberFragment extends Fragment{
     EditText firstNameEditText, lastNameEditText;
     Spinner daySpinner, monthSpinner, yearSpinner;

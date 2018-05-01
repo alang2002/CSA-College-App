@@ -5,9 +5,6 @@ import org.json.JSONObject;
 
 import java.sql.Ref;
 
-/**
- * Created by AL313011 on 4/16/2018.
- */
 public class ReferenceInfo extends BasicInfo {
     private String companyName = "";
     private String emailAddress = "";

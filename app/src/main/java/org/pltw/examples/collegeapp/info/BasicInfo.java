@@ -3,9 +3,6 @@ package org.pltw.examples.collegeapp.info;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-/**
- * Created by AL313011 on 4/16/2018.
- */
 public class BasicInfo {
     private String firstName = "", lastName  = "";
     private String occupation = "";
@@ -17,6 +14,10 @@ public class BasicInfo {
         this.lastName = lastName;
     }
 
+    /**
+     * Instantiate this class from a json object
+     * @param jsonObject the object containing BasicInfo data
+     */
     public BasicInfo(JSONObject jsonObject) {
         try {
             firstName = jsonObject.getString("firstname");
@@ -74,6 +75,10 @@ public class BasicInfo {
         return firstName + " " + lastName + " - " + birthdate + ", " + age;
     }
 
+    /**
+     * Return this object in the form of JSON
+     * @return this object in JSON
+     */
     public JSONObject serializeJSON() {
         JSONObject object = new JSONObject();
         try {

@@ -6,9 +6,6 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 
-/**
- * Created by AL313011 on 4/16/2018.
- */
 public class StudentInfo extends BasicInfo {
     private String previousSchoolName = "", previousStartDate = "", previousEndDate = "";
     private String major = "", minor = "";

@@ -18,9 +18,6 @@ import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import java.util.ArrayList;
 
-/**
- * Created by AL313011 on 4/18/2018.
- */
 public class CollegeAppDatabase {
     public static ArrayList<BasicInfo> guardians = new ArrayList<>();
     public static ArrayList<BasicInfo> siblings = new ArrayList<>();
@@ -30,7 +27,6 @@ public class CollegeAppDatabase {
     private static final String TAG = "CollegeAppDatabase";
 
     /**
-     * TODO
      * Checks to see if a database file exists. If yes, fill in our data.
      * If no, create a default one.
      */

@@ -10,9 +10,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-/**
- * Created by AL313011 on 4/19/2018.
- */
 public class ReferencesFragment extends Fragment {
     EditText firstNameEditText, lastNameEditText;
     EditText occupationEditText;
