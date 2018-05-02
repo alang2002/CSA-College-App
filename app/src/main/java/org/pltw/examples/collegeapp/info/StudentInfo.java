@@ -7,7 +7,8 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 
 public class StudentInfo extends BasicInfo {
-    private String previousSchoolName = "", previousStartDate = "", previousEndDate = "";
+    private String previousSchoolName = "";
+    int previousStartYear = 0, previousEndYear = 0;
     private String major = "", minor = "";
     private boolean isTransfer = false;
     private ArrayList<String> achievements = new ArrayList<>();
@@ -21,8 +22,8 @@ public class StudentInfo extends BasicInfo {
         super(jsonObject);
         try {
             previousSchoolName = jsonObject.getString("previousschoolname");
-            previousStartDate = jsonObject.getString("previousstartdate");
-            previousEndDate = jsonObject.getString("previousenddate");
+            previousStartYear = jsonObject.getInt("previousstartyear");
+            previousEndYear = jsonObject.getInt("previousendyear");
             major = jsonObject.getString("major");
             minor = jsonObject.getString("minor");
             isTransfer = jsonObject.getBoolean("istransfer");
@@ -44,20 +45,20 @@ public class StudentInfo extends BasicInfo {
         this.previousSchoolName = previousSchoolName;
     }
 
-    public String getPreviousStartDate() {
-        return previousStartDate;
+    public int getPreviousStartYear() {
+        return previousStartYear;
     }
 
-    public void setPreviousStartDate(String previousStartDate) {
-        this.previousStartDate = previousStartDate;
+    public void setPreviousStartYear(int previousStartYear) {
+        this.previousStartYear = previousStartYear;
     }
 
-    public String getPreviousEndDate() {
-        return previousEndDate;
+    public int getPreviousEndYear() {
+        return previousEndYear;
     }
 
-    public void setPreviousEndDate(String previousEndDate) {
-        this.previousEndDate = previousEndDate;
+    public void setPreviousEndYear(int previousEndDate) {
+        this.previousEndYear = previousEndDate;
     }
 
     public String getMajor() {
@@ -92,6 +93,10 @@ public class StudentInfo extends BasicInfo {
         this.achievements = achievements;
     }
 
+    public void addAchievement(String achievement) {
+        this.achievements.add(achievement);
+    }
+
     public double getGpa() {
         return gpa;
     }
@@ -115,8 +120,8 @@ public class StudentInfo extends BasicInfo {
         // Add student-specific information
         try {
             baseObject.put("previousschoolname", previousSchoolName);
-            baseObject.put("previousstartdate", previousStartDate);
-            baseObject.put("previousenddate", previousEndDate);
+            baseObject.put("previousstartyear", previousStartYear);
+            baseObject.put("previousendyear", previousEndYear);
             baseObject.put("major", major);
             baseObject.put("minor", minor);
             baseObject.put("istransfer", isTransfer);
