@@ -11,4 +11,24 @@
     <string name="first_name">First Name</string>
     <string name="last_name">Last Name</string>
     <string name="references">References</string>
+    <string name="academics">Academics</string>
+    <string name="transfer_student">Transfer Student</string>
+    <string name="major">Major</string>
+    <string name="minor">Minor</string>
+    <string name="gpa">GPA</string>
+    <string name="financial_aid">Financial Aid</string>
+    <string name="previous_school_name">Previous School Name</string>
+    <string name="school_name">School Name</string>
+    <string name="start_year">Start Year</string>
+    <string name="start">Start</string>
+    <string name="end_year">End Year</string>
+    <string name="end">End</string>
+    <string name="achievements">Achievements</string>
+    <string name="set_student">Set Student</string>
+    <string name="achievement_3">Achievement 3</string>
+    <string name="achievement_1">Achievement 1</string>
+    <string name="achievement_2">Achievement 2</string>
+    <string name="age">Age</string>
+    <string name="date_of_birth">Date of Birth</string>
+    <string name="profile_content">Profile Content</string>
 </resources>
