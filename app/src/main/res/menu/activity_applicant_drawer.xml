@@ -3,9 +3,14 @@
 
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/profile"
+            android:id="@+id/view_profile"
             android:icon="@drawable/ic_person_black_24dp"
-            android:title="@string/profile" />
+            android:title="@string/view_profile" />
+
+        <item
+            android:id="@+id/change_profile"
+            android:icon="@drawable/ic_person_black_24dp"
+            android:title="@string/change_profile" />
         <item
             android:id="@+id/family_member"
             android:icon="@drawable/ic_group_black_24dp"
