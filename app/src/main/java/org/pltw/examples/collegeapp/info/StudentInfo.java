@@ -5,14 +5,15 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class StudentInfo extends BasicInfo {
-    private String previousSchoolName = "";
-    int previousStartYear = 0, previousEndYear = 0;
-    private String major = "", minor = "";
-    private boolean isTransfer = false;
-    private ArrayList<String> achievements = new ArrayList<>();
-    private double gpa = 0.0, financialAid = 0.0;
+    protected String previousSchoolName = "";
+    protected int previousStartYear = 0, previousEndYear = 0;
+    protected String major = "", minor = "";
+    protected boolean isTransfer = false;
+    protected ArrayList<String> achievements = new ArrayList<>();
+    protected double gpa = 0.0, financialAid = 0.0;
 
     public StudentInfo(String firstName, String lastName) {
         super(firstName, lastName);
@@ -113,6 +114,41 @@ public class StudentInfo extends BasicInfo {
         this.financialAid = financialAid;
     }
 
+    /**
+     * Return all of the data from this class as an {@link ArrayList}
+     * @return the array form of this class
+     */
+    public ArrayList<String> getAsArray() {
+        String[] safeData = {
+                getFullName(),
+                birthdate,
+                String.valueOf(isTransfer),
+                major,
+                minor,
+                String.valueOf(gpa),
+                String.valueOf(financialAid),
+                previousSchoolName,
+                String.valueOf(previousStartYear),
+                String.valueOf(previousEndYear)
+        };
+
+        ArrayList<String> data = new ArrayList<>();
+        data.addAll(Arrays.asList(safeData));
+
+        for (int i = 0; i < 3; i++) {
+            if (achievements.size() < i)
+                achievements.add(achievements.get(i));
+            else
+                achievements.add("");
+        }
+
+        for (String achievement : achievements) {
+            data.add(achievement);
+        }
+
+        return data;
+    }
+
     @Override
     public JSONObject serializeJSON() {
         JSONObject baseObject = super.serializeJSON();
@@ -127,7 +163,7 @@ public class StudentInfo extends BasicInfo {
             baseObject.put("istransfer", isTransfer);
             baseObject.put("achievements", new JSONArray(achievements));
             baseObject.put("gpa", gpa);
-            baseObject.put("financialAid", financialAid);
+            baseObject.put("financialaid", financialAid);
         } catch (JSONException e) {
             e.printStackTrace();
         }

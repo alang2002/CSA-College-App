@@ -4,10 +4,10 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 public class BasicInfo {
-    private String firstName = "", lastName  = "";
-    private String occupation = "";
-    private String birthdate = "January/1/1999";
-    private int age = 0;
+    protected String firstName = "", lastName  = "";
+    protected String occupation = "";
+    protected String birthdate = "January/1/1999";
+    protected int age = 0;
 
     public BasicInfo(String firstName, String lastName) {
         this.firstName = firstName;
@@ -28,6 +28,10 @@ public class BasicInfo {
         } catch (JSONException e) {
             e.printStackTrace();
         }
+    }
+
+    public String getFullName() {
+        return firstName + " " + lastName;
     }
 
     public String getFirstName() {

@@ -268,7 +268,7 @@
                     android:ems="10"
                     android:id="@+id/editText_previous_school_name"
                     android:hint="@string/school_name"
-                    android:inputType="numberSigned" />
+                    android:inputType="text" />
             </LinearLayout>
 
             <LinearLayout
