@@ -135,6 +135,13 @@ public class StudentInfo extends BasicInfo {
         ArrayList<String> data = new ArrayList<>();
         data.addAll(Arrays.asList(safeData));
 
+        if (!isTransfer) {
+            data.set(2, "N/A");
+        }
+        else {
+            data.set(2, "Yes");
+        }
+
         for (int i = 0; i < 3; i++) {
             if (achievements.size() < i)
                 achievements.add(achievements.get(i));

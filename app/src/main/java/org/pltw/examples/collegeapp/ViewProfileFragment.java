@@ -40,15 +40,8 @@ public class ViewProfileFragment extends Fragment {
         textViews[12] = (TextView)rootView.findViewById(R.id.textView_achievement_3);
 
         for (int i = 0; i < textViews.length; i++) {
-            System.out.println(i);
             textViews[i].setText(data.get(i));
         }
-
-        /*
-        for (String data : CollegeAppDatabase.student.getAsArray()) {
-            Log.i("ViewProfile", data);
-        }
-        */
 
         return rootView;
     }
