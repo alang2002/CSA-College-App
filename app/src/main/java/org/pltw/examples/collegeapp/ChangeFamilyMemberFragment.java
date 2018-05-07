@@ -3,7 +3,6 @@ package org.pltw.examples.collegeapp;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,13 +13,11 @@ import android.widget.RadioButton;
 import android.widget.Spinner;
 import android.widget.Toast;
 
-import org.json.JSONObject;
 import org.pltw.examples.collegeapp.info.BasicInfo;
 
-import java.util.Arrays;
 import java.util.Locale;
 
-public class FamilyMemberFragment extends Fragment{
+public class ChangeFamilyMemberFragment extends Fragment{
     EditText firstNameEditText, lastNameEditText;
     Spinner daySpinner, monthSpinner, yearSpinner;
     EditText occupationEditText;
@@ -31,7 +28,7 @@ public class FamilyMemberFragment extends Fragment{
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         super.onCreateView(inflater, container, savedInstanceState);
-        View rootView = inflater.inflate(R.layout.fragment_family_member, container, false);
+        View rootView = inflater.inflate(R.layout.fragment_change_family_member, container, false);
 
         // for every child view
         // if view instance of edittext - store text in dictionary
@@ -103,7 +100,7 @@ public class FamilyMemberFragment extends Fragment{
 
         String occupation = occupationEditText.getText().toString();
 
-        boolean isGuardian = guardian.isSelected();
+        boolean isGuardian = guardian.isChecked();
 
         int age;
         try {
@@ -129,10 +126,13 @@ public class FamilyMemberFragment extends Fragment{
         familyMember.setOccupation(occupation);
         familyMember.setAge(age);
 
-        if (isGuardian)
+        if (isGuardian) {
+            familyMember.setFamilyRelation("Guardian");
             CollegeAppDatabase.addGuardian(familyMember, getContext());
-        else
+        } else {
+            familyMember.setFamilyRelation("Sibling");
             CollegeAppDatabase.addSibling(familyMember, getContext());
+        }
 
         clearElements();
     }

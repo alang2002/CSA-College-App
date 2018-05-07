@@ -32,4 +32,6 @@
     <string name="profile_content">Profile Content</string>
     <string name="change_profile">Change Profile</string>
     <string name="view_profile">View Profile</string>
+    <string name="view_family_member">View Family Member</string>
+    <string name="change_family_member">Change Family Member</string>
 </resources>

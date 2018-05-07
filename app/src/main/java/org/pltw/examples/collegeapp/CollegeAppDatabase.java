@@ -46,7 +46,6 @@ public class CollegeAppDatabase {
             JSONArray jsonSiblings = persistent.getJSONArray("siblings");
             for (int i = 0; i < jsonSiblings.length(); i++) {
                 siblings.add(new BasicInfo(jsonSiblings.getJSONObject(i)));
-                Log.d(TAG, "Creating item " + i);
             }
 
             // References

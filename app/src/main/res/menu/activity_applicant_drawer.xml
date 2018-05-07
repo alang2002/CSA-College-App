@@ -12,9 +12,13 @@
             android:icon="@drawable/ic_person_black_24dp"
             android:title="@string/change_profile" />
         <item
-            android:id="@+id/family_member"
+            android:id="@+id/view_family_member"
             android:icon="@drawable/ic_group_black_24dp"
-            android:title="@string/family_member" />
+            android:title="@string/view_family_member" />
+        <item
+            android:id="@+id/change_family_member"
+            android:icon="@drawable/ic_group_black_24dp"
+            android:title="@string/change_family_member" />
 
         <item
             android:id="@+id/references"

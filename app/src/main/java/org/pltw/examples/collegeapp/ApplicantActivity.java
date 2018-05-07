@@ -22,6 +22,7 @@ public class ApplicantActivity extends AppCompatActivity
         setSupportActionBar(toolbar);
 
         CollegeAppDatabase.init(this);
+        System.out.println(getFilesDir().getAbsolutePath());
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -59,8 +60,10 @@ public class ApplicantActivity extends AppCompatActivity
             contentFragment = new ViewProfileFragment();
         } else if (id == R.id.change_profile) {
             contentFragment = new ChangeProfileFragment();
-        } else if (id == R.id.family_member) {
-            contentFragment = new FamilyMemberFragment();
+        } else if (id == R.id.view_family_member) {
+            contentFragment = new ViewFamilyMemberFragment();
+        } else if (id == R.id.change_family_member) {
+            contentFragment = new ChangeFamilyMemberFragment();
         } else if (id == R.id.references) {
             contentFragment = new ReferencesFragment();
         }
