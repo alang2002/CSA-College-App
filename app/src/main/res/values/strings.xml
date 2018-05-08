@@ -9,7 +9,8 @@
     <string name="family_member_content">Family Member Content</string>
     <string name="first_name">First Name</string>
     <string name="last_name">Last Name</string>
-    <string name="references">References</string>
+    <string name="view_references">View References</string>
+    <string name="change_references">Change References</string>
     <string name="academics">Academics</string>
     <string name="transfer_student">Transfer Student</string>
     <string name="major">Major</string>

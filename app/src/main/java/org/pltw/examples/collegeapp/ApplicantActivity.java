@@ -64,8 +64,10 @@ public class ApplicantActivity extends AppCompatActivity
             contentFragment = new ViewFamilyMemberFragment();
         } else if (id == R.id.change_family_member) {
             contentFragment = new ChangeFamilyMemberFragment();
-        } else if (id == R.id.references) {
-            contentFragment = new ReferencesFragment();
+        } else if (id == R.id.change_references) {
+            contentFragment = new ChangeReferencesFragment();
+        } else if (id == R.id.view_references) {
+            contentFragment = new ViewReferencesFragment();
         }
 
         if (contentFragment != null) {

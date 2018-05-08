@@ -10,10 +10,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import org.pltw.examples.collegeapp.info.BasicInfo;
 import org.pltw.examples.collegeapp.info.ReferenceInfo;
 
-public class ReferencesFragment extends Fragment {
+public class ChangeReferencesFragment extends Fragment {
     EditText firstNameEditText, lastNameEditText;
     EditText occupationEditText;
     EditText ageEditText;
@@ -27,7 +26,7 @@ public class ReferencesFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         super.onCreateView(inflater, container, savedInstanceState);
-        View rootView = inflater.inflate(R.layout.fragment_references, container, false);
+        View rootView = inflater.inflate(R.layout.fragment_change_references, container, false);
 
         // Setup view elements
         firstNameEditText = (EditText) rootView.findViewById(R.id.editText_firstName);

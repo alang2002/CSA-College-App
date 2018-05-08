@@ -21,9 +21,14 @@
             android:title="@string/change_family_member" />
 
         <item
-            android:id="@+id/references"
+            android:id="@+id/view_references"
             android:icon="@drawable/ic_assignment_ind_black_24dp"
-            android:title="@string/references" />
+            android:title="@string/view_references"/>
+
+        <item
+            android:id="@+id/change_references"
+            android:icon="@drawable/ic_assignment_ind_black_24dp"
+            android:title="@string/change_references"/>
     </group>
 
 
