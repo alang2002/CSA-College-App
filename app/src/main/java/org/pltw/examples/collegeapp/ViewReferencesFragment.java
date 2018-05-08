@@ -11,6 +11,7 @@ import android.widget.BaseExpandableListAdapter;
 import android.widget.ExpandableListView;
 import android.widget.TextView;
 
+import org.pltw.examples.collegeapp.info.CollegeAppDatabase;
 import org.pltw.examples.collegeapp.info.ReferenceInfo;
 
 import java.util.ArrayList;

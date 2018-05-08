@@ -1,4 +1,4 @@
-package org.pltw.examples.collegeapp;
+package org.pltw.examples.collegeapp.info;
 
 import android.content.Context;
 import android.util.Log;
@@ -68,6 +68,11 @@ public class CollegeAppDatabase {
         Log.i(TAG, "Student exists: " + String.valueOf(student != null));
     }
 
+    /**
+     * Return a JSONObject containing the data stored on this device.
+     * @param c {@link Context} of the sender
+     * @return Persistent JSON data
+     */
     public static JSONObject readPersistent(Context c) {
         String response = "";
 

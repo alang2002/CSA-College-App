@@ -12,11 +12,12 @@ import android.widget.Spinner;
 import android.widget.Switch;
 import android.widget.Toast;
 
+import org.pltw.examples.collegeapp.info.CollegeAppDatabase;
 import org.pltw.examples.collegeapp.info.StudentInfo;
 
 import java.util.Locale;
 
-public class ChangeProfileFragment extends Fragment {
+public class SetProfileFragment extends Fragment {
     EditText firstNameEditText, lastNameEditText;
     Spinner daySpinner, monthSpinner, yearSpinner;
     EditText ageEditText;

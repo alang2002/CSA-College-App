@@ -10,7 +10,7 @@
     <string name="first_name">First Name</string>
     <string name="last_name">Last Name</string>
     <string name="view_references">View References</string>
-    <string name="change_references">Change References</string>
+    <string name="change_references">Add Reference</string>
     <string name="academics">Academics</string>
     <string name="transfer_student">Transfer Student</string>
     <string name="major">Major</string>
@@ -31,8 +31,8 @@
     <string name="age">Age</string>
     <string name="date_of_birth">Date of Birth</string>
     <string name="profile_content">Profile Content</string>
-    <string name="change_profile">Change Profile</string>
+    <string name="change_profile">Set Profile</string>
     <string name="view_profile">View Profile</string>
     <string name="view_family_member">View Family Member</string>
-    <string name="change_family_member">Change Family Member</string>
+    <string name="change_family_member">Add Family Member</string>
 </resources>

@@ -12,6 +12,7 @@ import android.widget.ExpandableListView;
 import android.widget.TextView;
 
 import org.pltw.examples.collegeapp.info.BasicInfo;
+import org.pltw.examples.collegeapp.info.CollegeAppDatabase;
 
 import java.util.ArrayList;
 

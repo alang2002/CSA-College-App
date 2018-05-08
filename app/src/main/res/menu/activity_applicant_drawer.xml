@@ -3,32 +3,34 @@
 
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/view_profile"
-            android:icon="@drawable/ic_person_black_24dp"
-            android:title="@string/view_profile" />
-
-        <item
             android:id="@+id/change_profile"
             android:icon="@drawable/ic_person_black_24dp"
             android:title="@string/change_profile" />
-        <item
-            android:id="@+id/view_family_member"
-            android:icon="@drawable/ic_group_black_24dp"
-            android:title="@string/view_family_member" />
+
         <item
             android:id="@+id/change_family_member"
             android:icon="@drawable/ic_group_black_24dp"
             android:title="@string/change_family_member" />
 
         <item
-            android:id="@+id/view_references"
-            android:icon="@drawable/ic_assignment_ind_black_24dp"
-            android:title="@string/view_references"/>
-
-        <item
             android:id="@+id/change_references"
             android:icon="@drawable/ic_assignment_ind_black_24dp"
             android:title="@string/change_references"/>
+
+        <item
+            android:id="@+id/view_profile"
+            android:icon="@drawable/ic_person_black_24dp"
+            android:title="@string/view_profile" />
+
+        <item
+            android:id="@+id/view_family_member"
+            android:icon="@drawable/ic_group_black_24dp"
+            android:title="@string/view_family_member" />
+
+        <item
+            android:id="@+id/view_references"
+            android:icon="@drawable/ic_assignment_ind_black_24dp"
+            android:title="@string/view_references"/>
     </group>
 
 

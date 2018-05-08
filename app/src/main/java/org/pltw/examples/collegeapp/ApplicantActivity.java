@@ -11,6 +11,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 
+import org.pltw.examples.collegeapp.info.CollegeAppDatabase;
+
 public class ApplicantActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
@@ -59,13 +61,13 @@ public class ApplicantActivity extends AppCompatActivity
         if (id == R.id.view_profile) {
             contentFragment = new ViewProfileFragment();
         } else if (id == R.id.change_profile) {
-            contentFragment = new ChangeProfileFragment();
+            contentFragment = new SetProfileFragment();
         } else if (id == R.id.view_family_member) {
             contentFragment = new ViewFamilyMemberFragment();
         } else if (id == R.id.change_family_member) {
-            contentFragment = new ChangeFamilyMemberFragment();
+            contentFragment = new AddFamilyMemberFragment();
         } else if (id == R.id.change_references) {
-            contentFragment = new ChangeReferencesFragment();
+            contentFragment = new AddReferenceFragment();
         } else if (id == R.id.view_references) {
             contentFragment = new ViewReferencesFragment();
         }

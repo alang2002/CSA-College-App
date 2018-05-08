@@ -10,9 +10,10 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import org.pltw.examples.collegeapp.info.CollegeAppDatabase;
 import org.pltw.examples.collegeapp.info.ReferenceInfo;
 
-public class ChangeReferencesFragment extends Fragment {
+public class AddReferenceFragment extends Fragment {
     EditText firstNameEditText, lastNameEditText;
     EditText occupationEditText;
     EditText ageEditText;

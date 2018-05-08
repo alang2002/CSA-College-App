@@ -2,7 +2,6 @@ package org.pltw.examples.collegeapp.info;
 
 import org.json.JSONException;
 import org.json.JSONObject;
-import org.pltw.examples.collegeapp.CollegeAppDatabase;
 
 import java.util.ArrayList;
 import java.util.Arrays;

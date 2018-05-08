@@ -14,10 +14,11 @@ import android.widget.Spinner;
 import android.widget.Toast;
 
 import org.pltw.examples.collegeapp.info.BasicInfo;
+import org.pltw.examples.collegeapp.info.CollegeAppDatabase;
 
 import java.util.Locale;
 
-public class ChangeFamilyMemberFragment extends Fragment{
+public class AddFamilyMemberFragment extends Fragment{
     EditText firstNameEditText, lastNameEditText;
     Spinner daySpinner, monthSpinner, yearSpinner;
     EditText occupationEditText;
